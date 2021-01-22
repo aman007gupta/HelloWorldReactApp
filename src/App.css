@@ -46,3 +46,9 @@ img {
 .App {
   background-color: aqua;
 }
+
+.error-output {
+  color: red;
+  font-style: italic;
+  font-size: 12px;
+}

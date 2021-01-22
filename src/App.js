@@ -16,10 +16,20 @@ class App extends React.Component{
     window.open(this.url, "_blank")
   }
   onNameChange = (event) => {
-    console.log("Value is ", event.target.value)
+    const nameRegex = RegExp('^[A-z]{1}[A-Za-z\\s]{2,}$')
+    console.log(event.target.value)
     this.setState({
       name:event.target.value
     })
+    if (nameRegex.test(event.target.value) || event.target.value.length === 0) {
+      this.setState({
+        nameError:''
+      })
+    } else {
+      this.setState({
+      nameError: 'Name is Incorrect'
+    })
+    }
   }
   render(){
     return(
@@ -31,6 +41,7 @@ class App extends React.Component{
         </div>
         <div>
           <input onChange={this.onNameChange}/>
+          <span className="error-output">{this.state.nameError}</span>
         </div>
       </>
     )

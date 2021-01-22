@@ -1,8 +1,6 @@
-// import logo from 'logo.svg';
+import logo from '../src/assets/images/Logo.svg';
 import './App.css';
 import React from 'react'
-import {render} from 'react-dom'
-import {Component} from 'react'
 
 class App extends React.Component{
   
@@ -16,6 +14,8 @@ class App extends React.Component{
     return(
       <div class ="App">
         <h1>{this.state.tittle}</h1>
+        <img src={logo}
+        alt= 'BridgeLabz Logo'/>
       </div>
     )
   }
